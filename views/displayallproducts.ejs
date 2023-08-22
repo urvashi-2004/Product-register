@@ -1,0 +1,79 @@
+<style>
+    .maincontainer{
+        width: 100%; 
+        height: 100%; 
+        background-color: #bdc3c7;   
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .box{
+        width: 60%;
+        height: auto;
+        background-color: white;
+        border-radius: 15px;
+        padding: 10px;
+    }
+    .headstyle{
+        /* font-family: kanit; */
+        font-size: 16px;
+        font-weight: bold;
+    }
+    .row span{
+        font-size: 20px;
+    }
+
+</style>
+<html>
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>   
+</head>
+<div class="maincontainer">
+    <div class="box">
+        <div class="col-sm-6" style="width: 98%; display: flex; font-weight:bold; font-size:24px; display:flex; flex-direction: row;">
+        <div style="display:flex; flex-direction: row; ">
+            <span><img src="/images/logo.jpg" width="60"></span>
+            <span> Product List </span>  
+        </div>     
+        <div style="margin-left:auto;">
+          <a href="/product/productinterface"> <img src="/images/add-icon.png" width="40"> </a> 
+        </div>       
+        </div><hr>
+    <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">S.no</th>
+        <th scope="col">Name</th>
+        <th scope="col">Type</th>
+        <th scope="col">packaging</th>
+        <th scope="col">Weight</th>
+        <th scope="col">Price</th>
+        <th scope="col">Picture</th>
+        <th scope="col"></th>
+        <th scope="col">Action</th>
+    </tr>
+    </thead>
+    <tbody>
+
+    <% data.map((item,i) => { %>
+            <tr>
+              <th scope="row"><%= i+1 %></th>
+              <td><%= item.productid %>/<%= item.productname %></td>
+              <td><%= item.categoryname %>/<%= item.producttype %></td>
+              <td><%= item.packaging %>/<%= item.quantity %></td>
+              <td><%= item.weight %>/<%= item.weighttype %></td>
+              <td><s><%= item.price %></s><br><%= item.offerprice %></td>
+              <td><%= item.productpicture %></td>
+              <td><a href='/product/editpicture?pid=<%=item.productid%> &productpicture=<%= item.productpicture%> &productname=<%=item.productname%>'><img src='/images/<%= item.productpicture %>' style="width:50px; height: 50px; border-radius: 5px;"></a></td>
+              <td><a href='/product/editproduct?pid=<%=item.productid%>' style="text-decoration:none;" >Edit</a></td>
+            </tr>
+
+        <% }) %>
+
+    </tbody>
+</table>
+</div>
+</div>
+
+</html>

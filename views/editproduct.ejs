@@ -1,0 +1,140 @@
+<style>
+    .maincontainer{
+        width: 100%; 
+        height: 100%; 
+        background-color: #bdc3c7;   
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .box{
+        width: 60%;
+        height: auto;
+        background-color: white;
+        border-radius: 15px;
+        padding: 10px;
+    }
+    .headstyle{
+        /* font-family: kanit; */
+        font-size: 16px;
+        font-weight: bold;
+    }
+    .row span{
+        font-size: 20px;
+    }
+
+</style>
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+<script src="/javascripts/product.js"></script>
+</head>
+<html>
+    <form action="/product/product_edit_data" method="post">
+        <div class="maincontainer">
+            <div class="box">
+                <div class="conatiner">
+                    <input type="hidden" value="<%=data.productid%>"  name="productid">
+                    <div class="row headstyle">
+                        <div class="col-sm-6" style="width: 98%; display: flex; font-weight:bold; font-size:24px; display:flex; flex-direction: row;">
+                            <div style="display:flex; flex-direction: row; ">
+                                <span><img src="/images/logo.jpg" width="60"></span>
+                                <span>Edit Product Register </span>  
+                            </div>     
+                            <div style="margin-left:auto;">
+                              <a href="/product/displayallproducts"> <img src="/images/list-icon.png" width="40"> </a> 
+                            </div>       
+                            </div>
+
+                            
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <hr>
+                                </div>
+                            </div>
+  
+
+                    <div class="row headstyle">
+                        <div class="col-sm-6">
+                            <label for="productname" class="form-label">Product Name</label>
+                            <input required value="<%= data.productname %>" class="form-control" type="text" name="productname" id="productname">
+                    </div>
+
+                        <div class="col-sm-6">
+                            <label for="categoryid" class="form-label">Category Name</label>
+                            <select required  name="categoryid" class="form-select" id="categoryid"> 
+                                <option selected value="<%= data.categoryid %>"><%=data.categoryname%></option> 
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="row headstyle" style="margin-top :10px;">
+                        <div class="col-sm-6">
+                            <label for="producttypeid" class="form-label">Product Type</label>
+                            <select required  name="producttypeid" class="form-select" id="producttypeid"> 
+                                <option selected value="<%= data.producttypeid %>"><%=data.producttype%></option>
+                            </select>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <label for="packaging" class="form-label">packaging</label>
+                            <select required  name="packaging" class="form-select" id="packaging"> 
+                                <option  selected value="<%= data.packaging %>"><%=data.packaging%></option>
+                                <option>box</option>
+                                <option>bottle</option>
+                                <option>piece</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="row headstyle" style="margin-top :10px;">
+                        <div class="col-sm-4">
+                            <label for="quantity" class="form-label">Quantity</label>
+                            <input required value="<%= data.quantity %>" id="quantity" class="form-control" type="text" name="quantity">
+                        </div>
+
+                        <div class="col-sm-4">
+                            <label for="weight" class="form-label">Weight</label>
+                            <input required value="<%= data.weight %>" id="weight" class="form-control" type="text" name="weight">
+                        </div> 
+                        
+                        <div class="col-sm-4">
+                            <label for="weighttype" class="form-label">Weight type</label>
+                            <select  required name="weighttype" class="form-select" id="weighttype"> 
+                                <option value="<%= data.weighttype %>" selected><%= data.weighttype %></option>
+                                <option>Kg</option>
+                                <option>Gm</option>
+                                <option>Lit</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="row headstyle" style="margin-top :10px;">
+                        <div class="col-sm-6">
+                            <label for="price" class="form-label">Price</label>
+                            <input required value="<%= data.price %>" id="price" class="form-control" type="text" name="price">
+                        </div>
+
+                        <div class="col-sm-6" >
+                            <label for="offerprice" class="form-label">Offer Price</label>
+                            <input required value="<%= data.offerprice %>" id="offerprice" class="form-control" type="text" name="offerprice">
+                        </div> 
+                    </div>   
+
+                    <div class="row headstyle" style="margin-top :10px;">
+                        <div class="col-sm-6" style="display: flex; justify-content: center; align-items: center;">
+                            <button type="submit" name="btn" value="Edit" class="btn btn-primary" style="width:100%;">Edit</button>
+                    </div>
+
+                    <div class="col-sm-6" style="display: flex; justify-content: center; align-items: center;">
+                        <button type="submit" name="btn" value="Delete" class="btn btn-primary" style="width:100%;">Delete</button>
+                    </div>
+                    </div>
+
+                    
+                </div>
+            </div>
+        </div>
+    </form>
+</html>

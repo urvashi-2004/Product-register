@@ -1,0 +1,4 @@
+productregister database
+product table
+
+

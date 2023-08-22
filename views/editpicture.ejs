@@ -1,0 +1,16 @@
+<html>
+    <body>
+        <center>
+            <form action="/product/edit_product_picture" method="post" enctype="multipart/form-data">
+                <input type="hidden" name="pid" value="<%=data.pid%>">
+                <input type="hidden" name="oldpicture" value="<%=data.productpicture%>">
+                <h1><%=data.productname%></h1><br>
+            <img src="/images/<%=data.productpicture%>" width="300"><br><br>
+            <h3><b>Select new picture:</b></h3><br>
+
+            <input type="file" name="productpicture" required><br><br>
+            <input type="submit" value="Edit picture">
+        </form>
+        </center>
+    </body>
+</html>

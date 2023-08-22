@@ -1,0 +1,90 @@
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+     .container{
+        height: 100vh;
+        background-color: #273c75;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+     }
+     .section{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+     }
+     .section1{
+        background: #000;
+     }
+     .section2{
+        background-color: aliceblue;
+        height: 29.75rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+     }
+     .box{
+        display: flex;
+        flex-direction: column;
+        margin: 50px;
+     }
+     .section2 h1{
+        color:#273c75;
+        margin-bottom: 20px;
+     }
+     .section2 h3{
+        color:#273c75;
+        margin-bottom: 40px;
+     }
+     input{
+        /* width: 80%; */
+        font-size: 15px;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid lightsteelblue;
+        box-shadow: 0px 0px 5px lightsteelblue;
+     }
+    button{
+        width: 90px;
+        padding: 10px;
+        border-radius: 5px;
+        background-color:#273c75;
+        border: none;
+        color: white;
+        font-size: 15px;
+        margin-left: 130px;
+        margin-top: 20px;
+        cursor: pointer;
+    }
+    button:hover{
+        background-color:#142b69;
+    }
+</style>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    </head>
+    <form action="/admin/checklogin" method="post">
+    <div class="container">
+        <div class="section">
+            <div class="section1">
+                <img src="/images/login.png" alt="">
+            </div>
+            <div class="section2">
+                <div class="box">
+                <h1>Welcome to InstaShipin</h1>
+                <h3>Ship Smarter Today</h3>
+
+                <input type="email" name="email" id="email" placeholder="Email" ><br>
+                <input type="password" name="password" id="password" placeholder="Password" ><br>
+                <button><i class="fa-solid fa-arrow-right-to-bracket"></i> Sign in</button>
+            </div></div>
+        </div>
+    </div>
+</form>
+</html>

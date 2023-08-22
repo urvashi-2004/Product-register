@@ -1,0 +1,129 @@
+<style>
+    .maincontainer{
+        width: 100vw;
+        height:100vh;
+        background-color: #bdc3c7;
+        display: flex;
+        flex-direction: column;
+    }
+    .box{
+        width: 100%;
+        height: 50px;
+        background-color: black;
+        margin-left: auto;
+    }
+    .appbarstyle{
+        width: 98%;
+        display: flex;
+        align-items: center;
+    }
+    .logostyle{
+        font-size: 30px;
+        color: goldenrod;
+        padding-left: 20px;
+    }
+    .logout{
+        font-size: 16px;
+        font-weight: bold;
+        color: white;
+        margin-left: auto;
+    }
+    .rowstyle{
+        display: flex;
+        flex-direction: row;
+        height: 100%;
+    }
+    .sidebar{
+        width: 15%;
+        /* height: 100%; */
+        background-color: whitesmoke;
+    }
+    .photo{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 10px;
+    }
+    img{
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        border: 2px solid black;
+    }
+    .admintext{
+        font-size: 16px;
+        font-weight: bold;
+        color: black;
+        display: flex;
+        justify-content: center;
+    }
+    .menustyle{
+        font-size: 16px;
+        font-weight: bold;
+        display: flex;
+        /* justify-content: center; */
+        flex-direction: column;
+        align-items: left;
+        margin-left: 20px;
+        margin-top: 20px;
+        gap: 10px;
+    }
+    .mainmenu{
+        margin: 20px;
+        width: 100%;
+    }
+    </style>
+<html>
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</head>
+
+<div class="maincontainer">
+    <div class="box">
+        <div class="appbarstyle">
+            <span class="logostyle">Digital World</span>
+            <span class="logout" >Logout</span>
+        </div>
+    </div>
+
+
+
+    <div class="rowstyle">
+    <div class="sidebar">
+        <div class="photo" >
+            <img src="/images/<%=userdata.picture%>" alt="">
+        </div>
+
+        <div class="admintext">
+            <%=userdata.adminname%>
+        </div>
+        <div style="display: flex; flex-direction: column; align-items: center; font-size: 12px; font-weight: bold; color: cornflowerblue;">
+            <div><%=userdata.email%></div>
+            <div>+91<%=userdata.mobileno%></div>
+        </div>
+
+        <div class="menustyle">
+            <div><i class="fa-solid fa-cart-plus"></i> <a style="text-decoration: none; color: black;" href="/product/productinterface" target="mw">New Product</a></div>
+            <div><i class="fa-solid fa-list"></i><a style="text-decoration: none; color: black;" href="/product/displayallproducts" target="mw"> Product Lists</a></div>
+            <div><i class="fa-solid fa-right-from-bracket"></i><a style="text-decoration: none; color: black;" href="/admin/logout"> Logout</a></div>
+        </div>
+        </div>
+
+
+        <div class="mainmenu">
+           <iframe name="mw" width="100%" height="100%" scrolling="no" frameborder="0"></iframe>
+        </div>
+    </div>
+    
+
+  
+
+   
+
+
+
+
+</div>
+</html>
